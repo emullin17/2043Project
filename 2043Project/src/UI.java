@@ -1,6 +1,3 @@
-
-package model;
-
 /**
  *
  * @author nmack
@@ -183,8 +180,11 @@ public class UI extends javax.swing.JFrame {
 
         jFrame3.setMinimumSize(new java.awt.Dimension(400, 300));
 
+        jScrollPane4.setRequestFocusEnabled(false);
+
         jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
+        jTextArea4.setRows(4);
+        jTextArea4.setTabSize(5);
         jTextArea4.setText("Reccomendations:\nLink\nLink\nLink");
         jScrollPane4.setViewportView(jTextArea4);
 
@@ -259,6 +259,7 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         service = jButton1.getText();
         jFrame1.setVisible(true);
+        jFrame.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
