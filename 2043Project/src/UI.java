@@ -319,7 +319,7 @@ public class UI extends javax.swing.JFrame {
         answers[questionNumber] = true;
         questionNumber ++;
         jLabel3.setText("Question " + (questionNumber+1));
-        if (questionNumber == 20) {
+        if (questionNumber == 5) {
             jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
@@ -330,7 +330,7 @@ public class UI extends javax.swing.JFrame {
         answers[questionNumber] = false;
         questionNumber ++;
         jLabel3.setText("Question " + (questionNumber+1));
-        if (questionNumber == 20) {
+        if (questionNumber == 5) {
             jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
