@@ -150,7 +150,7 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Question");
+        jLabel3.setText("Question 1");
 
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
@@ -259,7 +259,7 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         service = jButton1.getText();
         jFrame1.setVisible(true);
-        //jFrame.setVisible(false);
+        //
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -273,36 +273,42 @@ public class UI extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         mood = jButton3.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         mood = jButton4.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         mood = jButton7.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         mood = jButton8.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         mood = jButton9.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         mood = jButton10.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -312,7 +318,9 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = true;
         questionNumber ++;
+        jLabel3.setText("Question " + (questionNumber+1));
         if (questionNumber == 20) {
+            jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -321,7 +329,9 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = false;
         questionNumber ++;
+        jLabel3.setText("Question " + (questionNumber+1));
         if (questionNumber == 20) {
+            jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
