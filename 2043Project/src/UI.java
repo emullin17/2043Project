@@ -1,6 +1,3 @@
-
-package model;
-
 /**
  *
  * @author nmack
@@ -122,9 +119,9 @@ public class UI extends javax.swing.JFrame {
         jFrame1Layout.setVerticalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame1Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(60, 60, 60)
                 .addComponent(jLabel2)
-                .addGap(85, 85, 85)
+                .addGap(80, 80, 80)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
@@ -134,7 +131,7 @@ public class UI extends javax.swing.JFrame {
                     .addComponent(jButton7)
                     .addComponent(jButton10)
                     .addComponent(jButton9))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jFrame2.setMinimumSize(new java.awt.Dimension(400, 300));
@@ -153,7 +150,7 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Question");
+        jLabel3.setText("Question 1");
 
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
@@ -183,8 +180,11 @@ public class UI extends javax.swing.JFrame {
 
         jFrame3.setMinimumSize(new java.awt.Dimension(400, 300));
 
+        jScrollPane4.setRequestFocusEnabled(false);
+
         jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
+        jTextArea4.setRows(4);
+        jTextArea4.setTabSize(5);
         jTextArea4.setText("Reccomendations:\nLink\nLink\nLink");
         jScrollPane4.setViewportView(jTextArea4);
 
@@ -252,13 +252,17 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleName("jFrame0");
+
         pack();
     }//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         service = jButton1.getText();
+        
         jFrame1.setVisible(true);
+        //
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -272,36 +276,42 @@ public class UI extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         mood = jButton3.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         mood = jButton4.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         mood = jButton7.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         mood = jButton8.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         mood = jButton9.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         mood = jButton10.getText();
+        jFrame1.setVisible(false);
         jFrame2.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -311,7 +321,9 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = true;
         questionNumber ++;
-        if (questionNumber == 20) {
+        jLabel3.setText("Question " + (questionNumber+1));
+        if (questionNumber == 5) {
+            jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -320,7 +332,9 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = false;
         questionNumber ++;
-        if (questionNumber == 20) {
+        jLabel3.setText("Question " + (questionNumber+1));
+        if (questionNumber == 5) {
+            jFrame2.setVisible(false);
             jFrame3.setVisible(true);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
