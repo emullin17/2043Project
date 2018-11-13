@@ -37,7 +37,6 @@ public class UI extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jFrame3 = new javax.swing.JFrame();
-        jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -180,29 +179,26 @@ public class UI extends javax.swing.JFrame {
 
         jFrame3.setMinimumSize(new java.awt.Dimension(400, 300));
 
-        jScrollPane4.setRequestFocusEnabled(false);
-
         jTextArea4.setColumns(20);
         jTextArea4.setRows(4);
         jTextArea4.setTabSize(5);
         jTextArea4.setText("Reccomendations:\nLink\nLink\nLink");
-        jScrollPane4.setViewportView(jTextArea4);
 
         javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
         jFrame3.getContentPane().setLayout(jFrame3Layout);
         jFrame3Layout.setHorizontalGroup(
             jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+            .addGroup(jFrame3Layout.createSequentialGroup()
+                .addGap(0, 101, Short.MAX_VALUE)
+                .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 101, Short.MAX_VALUE))
         );
         jFrame3Layout.setVerticalGroup(
             jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame3Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGap(0, 101, Short.MAX_VALUE)
+                .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 101, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -427,7 +423,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea4;
     // End of variables declaration//GEN-END:variables
 

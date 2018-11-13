@@ -197,44 +197,32 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
-                  <Component id="jScrollPane4" min="-2" pref="200" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+                  <Component id="jTextArea4" min="-2" pref="198" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="jScrollPane4" min="-2" pref="100" max="-2" attributes="0"/>
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+                  <Component id="jTextArea4" min="-2" pref="98" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+        <Component class="javax.swing.JTextArea" name="jTextArea4">
           <Properties>
-            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="4"/>
+            <Property name="tabSize" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Reccomendations:&#xa;Link&#xa;Link&#xa;Link"/>
           </Properties>
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea4">
-              <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="4"/>
-                <Property name="tabSize" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Reccomendations:&#xa;Link&#xa;Link&#xa;Link"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
+        </Component>
       </SubComponents>
     </Container>
   </NonVisualComponents>
