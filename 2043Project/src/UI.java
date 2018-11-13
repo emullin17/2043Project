@@ -252,12 +252,15 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleName("jFrame0");
+
         pack();
     }//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         service = jButton1.getText();
+        
         jFrame1.setVisible(true);
         //
     }//GEN-LAST:event_jButton1ActionPerformed
