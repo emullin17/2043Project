@@ -119,9 +119,9 @@ public class UI extends javax.swing.JFrame {
         jFrame1Layout.setVerticalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame1Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(60, 60, 60)
                 .addComponent(jLabel2)
-                .addGap(85, 85, 85)
+                .addGap(80, 80, 80)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
@@ -131,7 +131,7 @@ public class UI extends javax.swing.JFrame {
                     .addComponent(jButton7)
                     .addComponent(jButton10)
                     .addComponent(jButton9))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jFrame2.setMinimumSize(new java.awt.Dimension(400, 300));
