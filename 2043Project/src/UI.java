@@ -26,7 +26,7 @@ public class UI extends javax.swing.JFrame {
     
     private String service = "Spotify", mood = "Joyous"; 
     private boolean[] answers = new boolean[5];
-    private int questionNumber = 0;
+    private int questionNumber = 0, maxQuestions = 5;
     
     private void initComponents() {//GEN-BEGIN:initComponents
 
@@ -327,7 +327,7 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = true;
         questionNumber ++;
-        if (questionNumber >= 5) {
+        if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
         }
         else{
@@ -341,7 +341,7 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = false;
         questionNumber ++;
-        if (questionNumber >= 5) {
+        if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
         }
         else{
