@@ -3,6 +3,7 @@
  * @author nmack
  */
 import java.awt.CardLayout;
+import java.awt.Color;
 
 /**
  *
@@ -27,7 +28,8 @@ public class UI extends javax.swing.JFrame {
     private String service = "Spotify", mood = "Joyous"; 
     private boolean[] answers = new boolean[5];
     private int questionNumber = 0, maxQuestions = 5;
-    
+    private boolean bgb = true;
+        
     private void initComponents() {//GEN-BEGIN:initComponents
 
         cards = new javax.swing.JPanel();
@@ -35,6 +37,8 @@ public class UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Brightness1 = new javax.swing.JButton();
+        background1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         mood4 = new javax.swing.JButton();
@@ -43,21 +47,31 @@ public class UI extends javax.swing.JFrame {
         mood1 = new javax.swing.JButton();
         mood5 = new javax.swing.JButton();
         mood3 = new javax.swing.JButton();
+        background2 = new javax.swing.JLabel();
+        Brightness2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jTextArea4 = new javax.swing.JTextArea();
-        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
 
         cards.setLayout(new java.awt.CardLayout());
 
+        jPanel1.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("                     Select a Service                    ");
+        jLabel1.setAutoscrolls(true);
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setFocusable(false);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(100, 80, 200, 14);
 
         jButton1.setText("Netflix");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +79,8 @@ public class UI extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(100, 199, 75, 21);
 
         jButton2.setText("Spotify");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -72,35 +88,25 @@ public class UI extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(225, 199, 75, 21);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(100, 100, 100))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(80, 80, 80))
-        );
+        Brightness1.setText("Light/Dark");
+        Brightness1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brightness1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Brightness1);
+        Brightness1.setBounds(0, 280, 70, 21);
+
+        background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
+        jPanel1.add(background1);
+        background1.setBounds(0, 0, 410, 300);
 
         cards.add(jPanel1, "card5");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("                                        Select a Mood                                 ");
 
         mood4.setText("Joyous");
@@ -148,12 +154,21 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
+
+        Brightness2.setText("Light/Dark");
+        Brightness2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brightness2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -172,6 +187,14 @@ public class UI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(mood6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(52, 52, 52))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(Brightness2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +211,13 @@ public class UI extends javax.swing.JFrame {
                     .addComponent(mood4)
                     .addComponent(mood5)
                     .addComponent(mood6))
-                .addGap(80, 80, 80))
+                .addGap(59, 59, 59)
+                .addComponent(Brightness2))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         cards.add(jPanel2, "card3");
@@ -262,8 +291,6 @@ public class UI extends javax.swing.JFrame {
 
         cards.add(jPanel4, "card5");
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/cs2043bkgrdgradblk.jpg"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,22 +299,12 @@ public class UI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         getAccessibleContext().setAccessibleName("jFrame0");
@@ -400,6 +417,24 @@ public class UI extends javax.swing.JFrame {
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
         
     }//GEN-LAST:event_mood4ActionPerformed
+
+    private void Brightness1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness1ActionPerformed
+
+        if (bgb) {
+            jLabel1.setForeground(new Color(0,0,0));
+            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            bgb = false;
+        }
+        else{
+            jLabel1.setForeground(new Color(255,255,255));
+            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            bgb = true;
+        }
+    }//GEN-LAST:event_Brightness1ActionPerformed
+
+    private void Brightness2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Brightness2ActionPerformed
 
     public String nextQuestion(){
         String res = "";
@@ -564,7 +599,10 @@ public class UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel background;
+    private javax.swing.JButton Brightness1;
+    private javax.swing.JButton Brightness2;
+    private javax.swing.JLabel background1;
+    private javax.swing.JLabel background2;
     private javax.swing.JPanel cards;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
