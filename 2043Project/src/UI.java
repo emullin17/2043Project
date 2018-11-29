@@ -16,7 +16,7 @@ public class UI extends javax.swing.JFrame {
     public UI() {
         initComponents();
     }
-
+ 
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -25,7 +25,7 @@ public class UI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     private String service = "Spotify", mood = "Joyous"; 
-    private boolean[] answers = new boolean[20];
+    private boolean[] answers = new boolean[5];
     private int questionNumber = 0;
     
     private void initComponents() {//GEN-BEGIN:initComponents
@@ -37,18 +37,19 @@ public class UI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        mood4 = new javax.swing.JButton();
+        mood2 = new javax.swing.JButton();
+        mood6 = new javax.swing.JButton();
+        mood1 = new javax.swing.JButton();
+        mood5 = new javax.swing.JButton();
+        mood3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jTextArea4 = new javax.swing.JTextArea();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
@@ -100,50 +101,50 @@ public class UI extends javax.swing.JFrame {
 
         cards.add(jPanel1, "card5");
 
-        jLabel2.setText("                                   Select a Mood                                 ");
+        jLabel2.setText("                                        Select a Mood                                 ");
 
-        jButton3.setText("Joyous");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        mood4.setText("Joyous");
+        mood4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                mood4ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Grieved");
-        jButton4.setMaximumSize(new java.awt.Dimension(52, 21));
-        jButton4.setMinimumSize(new java.awt.Dimension(52, 21));
-        jButton4.setPreferredSize(new java.awt.Dimension(52, 21));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        mood2.setText("Grieved");
+        mood2.setMaximumSize(new java.awt.Dimension(52, 21));
+        mood2.setMinimumSize(new java.awt.Dimension(52, 21));
+        mood2.setPreferredSize(new java.awt.Dimension(52, 21));
+        mood2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                mood2ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Lugubrious");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        mood6.setText("Lugubrious");
+        mood6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                mood6ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Bored");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        mood1.setText("Bored");
+        mood1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                mood1ActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Shocked");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        mood5.setText("Shocked");
+        mood5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                mood5ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Confused");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        mood3.setText("Confused");
+        mood3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                mood3ActionPerformed(evt);
             }
         });
 
@@ -152,24 +153,25 @@ public class UI extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mood1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mood4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mood5, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(mood2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mood3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(62, 62, 62))
+                                .addComponent(mood6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(52, 52, 52))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,14 +180,14 @@ public class UI extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7))
+                    .addComponent(mood1)
+                    .addComponent(mood2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mood3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton10)
-                    .addComponent(jButton8))
+                    .addComponent(mood4)
+                    .addComponent(mood5)
+                    .addComponent(mood6))
                 .addGap(80, 80, 80))
         );
 
@@ -260,6 +262,8 @@ public class UI extends javax.swing.JFrame {
 
         cards.add(jPanel4, "card5");
 
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/cs2043bkgrdgradblk.jpg"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,12 +272,22 @@ public class UI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cards, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         getAccessibleContext().setAccessibleName("jFrame0");
@@ -285,6 +299,12 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         service = jButton1.getText();
         ((CardLayout)(cards.getLayout ())).show (cards, "card3");
+        mood1.setText("Excited");
+        mood2.setText("Emotional");
+        mood3.setText("Content");
+        mood4.setText("Upset");
+        mood5.setText("Bored");
+        mood6.setText("Adventurous");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -292,10 +312,14 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         service = jButton2.getText();
         ((CardLayout)(cards.getLayout ())).show (cards, "card3");
+        mood1.setText("Excited");
+        mood2.setText("Emotional");
+        mood3.setText("Content");
+        mood4.setText("Upset");
+        mood5.setText("Nostalgic");
+        mood6.setText("Chill");
         
     }//GEN-LAST:event_jButton2ActionPerformed
-
-
 
 
 
@@ -303,9 +327,12 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = true;
         questionNumber ++;
-        jLabel3.setText("Question " + (questionNumber+1));
-        if (questionNumber == 5) {
+        if (questionNumber >= 5) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+        }
+        else{
+            String q = nextQuestion();
+            jLabel3.setText(q);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -313,55 +340,157 @@ public class UI extends javax.swing.JFrame {
         // TODO add your handling code here:
         answers[questionNumber] = false;
         questionNumber ++;
-        jLabel3.setText("Question " + (questionNumber+1));
-        if (questionNumber == 5) {
+        if (questionNumber >= 5) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+        }
+        else{
+            String q = nextQuestion();
+            jLabel3.setText(q);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+
+
+    private void mood3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood3ActionPerformed
         // TODO add your handling code here:
-        mood = jButton7.getText();
+        mood = mood3.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
 
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_mood3ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void mood5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood5ActionPerformed
         // TODO add your handling code here:
-        mood = jButton10.getText();
+        mood = mood5.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
 
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_mood5ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void mood1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood1ActionPerformed
         // TODO add your handling code here:
-        mood = jButton9.getText();
+        mood = mood1.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
 
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_mood1ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void mood6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood6ActionPerformed
         // TODO add your handling code here:
-        mood = jButton8.getText();
+        mood = mood6.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
 
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_mood6ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void mood2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood2ActionPerformed
         // TODO add your handling code here:
-        mood = jButton4.getText();
+        mood = mood2.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_mood2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void mood4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mood4ActionPerformed
         // TODO add your handling code here:
-        mood = jButton3.getText();
+        mood = mood4.getText();
+        jLabel3.setText(nextQuestion());
         ((CardLayout)(cards.getLayout ())).show (cards, "card4");
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_mood4ActionPerformed
 
+    public String nextQuestion(){
+        String res = "";
+        int nextQ = 0;
+        if (service == "Spotify"){
+            if (mood == "Nostalgic"){
+                switch (questionNumber){
+                case 0: 
+                    nextQ = 1;
+                    break;
+                case 1:
+                    nextQ = 2;
+                    break;
+                case 2:
+                    if (answers[0]){
+                        if (answers[1]){        
+                            nextQ = 3;
+                        }
+                        else{
+                            nextQ = 6;
+                        }
+                    }
+                    else{
+                        if (answers[1]){        
+                            nextQ = 8;
+                        }
+                        else{
+                            nextQ = 6;
+                        }
+                    }
+                    break;
+                case 3:
+                    if (answers[0]){        
+                        nextQ = 4;
+                    }
+                    else{
+                        nextQ = 9;
+                    }
+                    break;
+                case 4:
+                    if (((answers[0] && (!answers[1])) && answers[2]) || (((!answers[0]) && (!answers[1])) && answers[2])){        
+                        nextQ = 7;
+                    }
+                    else{
+                        nextQ = 5;
+                    }
+                    break;
+                }
 
+                switch (nextQ) {
+                case 1:
+                    res = "Were you born before 1980?";
+                    break;
+                case 2:
+                    res = "Do you enjoy pop music?";
+                    break;
+                case 3:
+                    res = "Do you enjoy ballads";
+                    break;
+                case 4:
+                    res = "Do you enjoy songs from the 80's?";
+                    break;
+                case 5:
+                    res = "Do you want uplifting music?";
+                    break;
+                case 6:
+                    res = "Do you enjoy rock music?";
+                    break;
+                case 7:
+                    res = "Are you feeling angry or angsty?";
+                    break;
+                case 8:
+                    res = "Do you enjoy R&B / rap?";
+                    break;
+                case 9:
+                    res = "Do you enjoy songs from the 90's?";
+                    break;
+                }
+            }
+            else{
+                res = ("Question " + questionNumber);
+            }
+        }
+        else if(service == "Netflix"){
+            res = ("Question " + questionNumber);
+
+            
+        }
+        else{
+            res = "Error";
+        }
+        return res;
+    }
 
     /**
      * @param args the command line arguments
@@ -433,17 +562,12 @@ public class UI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JPanel cards;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -452,6 +576,12 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JButton mood1;
+    private javax.swing.JButton mood2;
+    private javax.swing.JButton mood3;
+    private javax.swing.JButton mood4;
+    private javax.swing.JButton mood5;
+    private javax.swing.JButton mood6;
     // End of variables declaration//GEN-END:variables
 
 }
