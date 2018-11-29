@@ -334,6 +334,7 @@ public class UI extends javax.swing.JFrame {
             String q = nextQuestion();
             jLabel3.setText(q);
         }
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -347,6 +348,7 @@ public class UI extends javax.swing.JFrame {
             String q = nextQuestion();
             jLabel3.setText(q);
         }
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
 
