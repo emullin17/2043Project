@@ -5,10 +5,6 @@
 import java.awt.CardLayout;
 import java.awt.Color;
 
-/**
- *
- * @author nmack
- */
 public class UI extends javax.swing.JFrame {
     @SuppressWarnings("compatibility:2647264885859345639")
     private static final long serialVersionUID = 1L;
@@ -192,9 +188,9 @@ public class UI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 0, 0)
+                    .addComponent(background2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,9 +211,9 @@ public class UI extends javax.swing.JFrame {
                 .addComponent(Brightness2))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 0, 0)
+                    .addComponent(background2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
         );
 
         cards.add(jPanel2, "card3");
@@ -519,8 +515,178 @@ public class UI extends javax.swing.JFrame {
             }
         }
         else if(service == "Netflix"){
-            res = ("Question " + questionNumber);
-
+            if (mood == "Upset"){
+                switch (questionNumber){
+                case 0: 
+                    nextQ = 1;
+                    break;
+                case 1:
+                    if (answers[0]){
+                        nextQ = 2;
+                    }
+                    else{
+                        nextQ = 14;
+                    }
+                    break;
+                case 2:
+                    if (answers[0]){
+                        if (answers[1]){        
+                            nextQ = 10;
+                        }
+                        else{
+                            nextQ = 3;
+                        }
+                    }
+                    else{
+                        if (answers[1]){        
+                            nextQ = 16;
+                        }
+                        else{
+                            nextQ = 15;
+                        }
+                    }
+                    break;
+                case 3:
+                    if (answers[0]){        
+                        if (answers[1]){        
+                            nextQ = 11;
+                        }
+                        else{
+                            if (answers[2]){        
+                                nextQ = 4;
+                            }
+                            else{
+                                nextQ = 5;
+                            }
+                        }
+                    }
+                    else{
+                        if (answers[1]){        
+                            if (answers[2]){        
+                                nextQ = 18;
+                                maxQuestions = 4;
+                            }
+                            else{
+                                nextQ = 19;
+                                maxQuestions = 4;
+                            }
+                        }
+                        else{
+                            nextQ = 16;
+                        }
+                    }
+                    break;
+                case 4:
+                    if (answers[0]){        
+                        if (answers[1]){        
+                            if (answers[3]){        
+                                nextQ = 13;
+                            }
+                            else{
+                                nextQ = 12;
+                            }
+                        }
+                        else{
+                            if (answers[2]){        
+                                if (answers[3]){        
+                                    nextQ = 6;
+                                }
+                                else{
+                                    nextQ = 7;
+                                }
+                            }
+                            else{
+                                if (answers[3]){        
+                                    nextQ = 8;
+                                }
+                                else{
+                                    nextQ = 9;
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        if (answers[2]){        
+                            if (answers[3]){        
+                                nextQ = 19;
+                            }
+                            else{
+                                nextQ = 18;
+                            }
+                        }
+                        else{
+                            if (answers[3]){        
+                                nextQ = 18;
+                            }
+                            else{
+                                nextQ = 18;
+                                maxQuestions = 4;
+                                ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+                            }
+                        }
+                    }
+                    break;
+                }
+                switch (nextQ) {
+                case 1:
+                    res = "Do you want to be cheered up?";
+                    break;
+                case 2:
+                    res = "Do you enjoy rom-coms?";
+                    break;
+                case 3:
+                    res = "Do you enjoy fairy-tale movies";
+                    break;
+                case 4:
+                    res = "Do you enjoy animated movies?";
+                    break;
+                case 5:
+                    res = "Do you enjoy sit-coms?";
+                    break;
+                case 6:
+                    res = "Do you enjoy disney princesses?";
+                    break;
+                case 7:
+                    res = "Do you want to laugh?";
+                    break;
+                case 8:
+                    res = "Do you hate laugh tracks?";
+                    break;
+                case 9:
+                    res = "Do you enjoy feel-good movies";
+                    break;
+                case 10:
+                    res = "Do you enjoy musicals";
+                    break;
+                case 11:
+                    res = "Do you want a happy ending?";
+                    break;
+                case 12:
+                    res = "Do you enjoy an open ending?";
+                    break;
+                case 13:
+                    res = "Do you want christmas movies";
+                    break;
+                case 14:
+                    res = "Do you enjoy romance movies?";
+                    break;
+                case 15:
+                    res = "Do you enjoy dramas?";
+                    break;
+                case 16:
+                    res = "Do you enjoy tragedys?";
+                    break;
+                case 18:
+                    res = "Do you enjoy historical movies?";
+                    break;
+                case 19:
+                    res = "Are you 18+?";
+                    break;
+                }
+            }
+            else{
+                res = ("Question " + questionNumber);
+            }
             
         }
         else{
