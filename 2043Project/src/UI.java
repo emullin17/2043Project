@@ -49,14 +49,20 @@ public class UI extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        Brightness3 = new javax.swing.JButton();
+        background3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jTextArea4 = new javax.swing.JTextArea();
+        Brightness4 = new javax.swing.JButton();
+        background4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 400, 300));
         setMinimumSize(new java.awt.Dimension(400, 300));
 
         cards.setLayout(new java.awt.CardLayout());
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -102,8 +108,11 @@ public class UI extends javax.swing.JFrame {
 
         cards.add(jPanel1, "card5");
 
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("                                        Select a Mood                                 ");
+        jLabel2.setToolTipText("");
 
         mood4.setText("Joyous");
         mood4.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +204,7 @@ public class UI extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -218,6 +227,8 @@ public class UI extends javax.swing.JFrame {
 
         cards.add(jPanel2, "card3");
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
         jButton5.setText("Yes");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,41 +243,76 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Question 1");
+
+        Brightness3.setText("Light/Dark");
+        Brightness3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brightness3ActionPerformed(evt);
+            }
+        });
+
+        background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(Brightness3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(100, 100, 100))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton6))
-                .addGap(80, 80, 80))
+                .addGap(59, 59, 59)
+                .addComponent(Brightness3))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         cards.add(jPanel3, "card4");
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(4);
         jTextArea4.setTabSize(5);
         jTextArea4.setText("Reccomendations:\nLink\nLink\nLink");
         jTextArea4.setMinimumSize(new java.awt.Dimension(93, 60));
+
+        Brightness4.setText("Light/Dark");
+        Brightness4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Brightness4ActionPerformed(evt);
+            }
+        });
+
+        background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -276,13 +322,27 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap(100, Short.MAX_VALUE)
                 .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(Brightness4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(Brightness4))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background4)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         cards.add(jPanel4, "card5");
@@ -426,11 +486,54 @@ public class UI extends javax.swing.JFrame {
             background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
             bgb = true;
         }
+        
     }//GEN-LAST:event_Brightness1ActionPerformed
 
     private void Brightness2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness2ActionPerformed
-        // TODO add your handling code here:
+        
+        if (bgb) {
+            jLabel2.setForeground(new Color(0,0,0));
+            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            bgb = false;
+        }
+        else{
+            jLabel2.setForeground(new Color(255,255,255));
+            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            bgb = true;
+        }
+        
     }//GEN-LAST:event_Brightness2ActionPerformed
+
+    private void Brightness3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness3ActionPerformed
+        
+        if (bgb) {
+            jLabel3.setForeground(new Color(0,0,0));
+            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            bgb = false;
+        }
+        else{
+            jLabel3.setForeground(new Color(255,255,255));
+            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            bgb = true;
+        }
+        
+    }//GEN-LAST:event_Brightness3ActionPerformed
+
+    private void Brightness4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness4ActionPerformed
+        
+        if (bgb) {
+            jTextArea4.setForeground(new Color(0, 0, 0));
+            jTextArea4.setBackground(new Color(255, 255, 255));
+            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            bgb = false;
+        } else {
+            jTextArea4.setForeground(new Color(255, 255, 255));
+            jTextArea4.setBackground(new Color(0, 0, 0));
+            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            bgb = true;
+        }
+        
+    }//GEN-LAST:event_Brightness4ActionPerformed
 
     public String nextQuestion(){
         String res = "";
@@ -627,6 +730,7 @@ public class UI extends javax.swing.JFrame {
                     }
                     break;
                 }
+                
                 switch (nextQ) {
                 case 1:
                     res = "Do you want to be cheered up?";
@@ -694,7 +798,133 @@ public class UI extends javax.swing.JFrame {
         }
         return res;
     }
-
+    
+    public String getlink(){
+        String link = "";
+        int ansNum = 0;
+        if (!answers[0]){
+            ansNum += 16;
+        }
+        if (!answers[1]){
+            ansNum += 8;
+        }
+        if (!answers[2]){
+            ansNum += 4;
+        }
+        if (!answers[3]){
+            ansNum += 2;
+        }
+        if (!answers[4]){
+            ansNum += 1;
+        }
+        if (service == "Spotify"){
+            if (mood == "Nostalgic"){
+                switch (ansNum){
+                case 0:
+                    link = "https://open.spotify.com/playlist/1IL0MhRvKPfbY5ydtfhgPx";
+                    break;
+                case 1:
+                    link = "https://open.spotify.com/playlist/5N2QcBRLhUuPVHPul2Ixo1";
+                    break;
+                case 2:
+                    link = "https://open.spotify.com/playlist/3XNjv8oBijpRzwUJGnLMcG";
+                    break;
+                case 3:
+                    link = "https://open.spotify.com/playlist/403B1q712uhUklG9YDSHJx";
+                    break;
+                case 4:
+                    link = "https://open.spotify.com/playlist/37i9dQZF1DX4UtSsGT1Sbe";
+                    break;
+                case 5:
+                    link = " https://open.spotify.com/playlist/1gHRy2iKi98RvDI4x04lAY";
+                    break;
+                case 6:
+                    link = "https://open.spotify.com/playlist/37i9dQZF1DWTJ7xPn4vNaz";
+                    break;
+                case 7:
+                    link = "https://open.spotify.com/playlist/3WweQ4irQjTALRyqDhBHwy";
+                    break;
+                case 8:
+                    link = "https://open.spotify.com/playlist/5zPi4I5lXSqcR2QBBpOFH9";
+                    break;
+                case 9:
+                    link = "https://open.spotify.com/playlist/05s0l2KgsETYbzuQHAxmli";
+                    break;
+                case 10:
+                    link = "https://open.spotify.com/album/1PFT53HYdmVZel3CZBwG2E";
+                    break;
+                case 11:
+                    link = "https://open.spotify.com/playlist/5RkXZzyPCKrovrl1XF92vo";
+                    break;
+                case 12:
+                    link = "https://open.spotify.com/playlist/5XtxWMA59OUxSdJ7KuolHv";
+                    break;
+                case 13:
+                    link = "https://open.spotify.com/playlist/7a1xivxbS2IUmDs6sE3l8T";
+                    break;
+                case 14:
+                    link = "https://open.spotify.com/playlist/5nuiBAmQMTs7ke5Lk3liMG";
+                    break;
+                case 15:
+                    link = "https://open.spotify.com/playlist/33soTRv4WXmLv4HxCgY6eQv";
+                    break;
+                case 16:
+                    link = "https://open.spotify.com/playlist/2Ev5qFPB7T5PlKp2lyxxHS";
+                    break;
+                case 17:
+                    link = "https://open.spotify.com/playlist/5nNVCecF8ltyJJ8EROjlIu";
+                    break;
+                case 18:
+                    link = "https://open.spotify.com/playlist/2M3OQonxZ2MhKFEifQBkds";
+                    break;
+                case 19:
+                    link = "https://open.spotify.com/playlist/5y4CWB2TPNGfeiTcc2LiBK";
+                    break;
+                case 20:
+                    link = "https://open.spotify.com/playlist/37i9dQZF1DXbTxeAdrVG2l";
+                    break;
+                case 21:
+                    link = "https://open.spotify.com/playlist/5Kar9ubIBpXecVyV9kEz1d";
+                    break;
+                case 22:
+                    link = "https://open.spotify.com/playlist/37i9dQZF1DX4o1oenSJRJd";
+                    break;
+                case 23:
+                    link = "https://open.spotify.com/playlist/3iV4ZqhZmtyhORAAZS2dqR";
+                    break;
+                case 24:
+                    link = "https://open.spotify.com/playlist/0JUlyXSy79Glv5RAqaMX22";
+                    break;
+                case 25:
+                    link = "https://open.spotify.com/playlist/2MTatPQetkXpe9jsBVsIwb";
+                    break;
+                case 26:
+                    link = "https://open.spotify.com/playlist/6K1M7n7RmDa3wqDTaGv4uR";
+                    break;
+                case 27:
+                    link = "https://open.spotify.com/playlist/2PkJ5gKXy0DTsC1NoPREKq";
+                    break;
+                case 28:
+                    link = "https://open.spotify.com/playlist/6Eyc4qnnEM2QNd5uswK96E";
+                    break;
+                case 29:
+                    link = "https://open.spotify.com/playlist/3u9pTKTQY6bphXy20LPZjg";
+                    break;
+                case 30:
+                    link = "https://open.spotify.com/playlist/26MW2euiWghblyEqXGpQ0U";
+                    break;
+                case 31:
+                    link = "https://open.spotify.com/playlist/0uxWvglcNYX7hJv1851hnr";
+                    break;
+                }
+                
+            }
+            else{
+                link = "link";
+            }
+        }
+            
+    }
     /**
      * @param args the command line arguments
      */
@@ -763,12 +993,18 @@ public class UI extends javax.swing.JFrame {
                 }
             });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Brightness1;
     private javax.swing.JButton Brightness2;
+    private javax.swing.JButton Brightness3;
+    private javax.swing.JButton Brightness4;
     private javax.swing.JLabel background1;
     private javax.swing.JLabel background2;
+    private javax.swing.JLabel background3;
+    private javax.swing.JLabel background4;
     private javax.swing.JPanel cards;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
