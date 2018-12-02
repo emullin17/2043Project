@@ -923,7 +923,7 @@ public class UI extends javax.swing.JFrame {
                 link = "link";
             }
         }
-            
+        return link;    
     }
     /**
      * @param args the command line arguments
