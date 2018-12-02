@@ -250,7 +250,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="mood2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Grieved"/>
+                <Property name="text" type="java.lang.String" value="Emotional"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[52, 21]"/>
                 </Property>

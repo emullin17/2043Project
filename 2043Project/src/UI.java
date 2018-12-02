@@ -121,7 +121,7 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
-        mood2.setText("Grieved");
+        mood2.setText("Emotional");
         mood2.setMaximumSize(new java.awt.Dimension(52, 21));
         mood2.setMinimumSize(new java.awt.Dimension(52, 21));
         mood2.setPreferredSize(new java.awt.Dimension(52, 21));
@@ -402,6 +402,7 @@ public class UI extends javax.swing.JFrame {
         questionNumber ++;
         if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+            jTextArea4.setText(getLink());
         }
         else{
             String q = nextQuestion();
@@ -416,6 +417,7 @@ public class UI extends javax.swing.JFrame {
         questionNumber ++;
         if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+            jTextArea4.setText(getLink());
         }
         else{
             String q = nextQuestion();
@@ -725,6 +727,7 @@ public class UI extends javax.swing.JFrame {
                                 nextQ = 18;
                                 maxQuestions = 4;
                                 ((CardLayout)(cards.getLayout ())).show (cards, "card5");
+                                jTextArea4.setText(getLink());
                             }
                         }
                     }
@@ -799,7 +802,7 @@ public class UI extends javax.swing.JFrame {
         return res;
     }
     
-    public String getlink(){
+    public String getLink(){
         String link = "";
         int ansNum = 0;
         if (!answers[0]){
@@ -923,6 +926,98 @@ public class UI extends javax.swing.JFrame {
                 link = "link";
             }
         }
+        else{
+            if (mood == "Upset"){
+                switch (ansNum){
+                case 0:
+                    link = "https://www.netflix.com/watch/60031262?trackId=13752289&tctx=0%2C0%2Ce1c9950e2644648bd77be58373c1199c36211c3d%3A5794c61ce67e31d39cf483b29271d7329d609fa4%2C%2C";
+                    break;
+                case 1:
+                    link = "https://www.netflix.com/watch/80135073?trackId=13752289&tctx=1%2C3%2Cd9fc074e2d163aa9efc421d160195059366f3d6c%3A79284a3522d39fba2a55cf5705a4dded24b5867d%2C%2C";
+                    break;
+                case 2:
+                    link = "https://www.netflix.com/watch/70121711?trackId=13752289&tctx=0%2C0%2Cf5f1cabb-d456-4433-b5ba-785c0585fee8-397658776%2C%2C";
+                    break;
+                case 3:
+                    link = "https://www.netflix.com/watch/70121711?trackId=13752289&tctx=0%2C0%2Cf5f1cabb-d456-4433-b5ba-785c0585fee8-397658776%2C%2C";
+                    break;
+                case 4:
+                    link = "https://www.netflix.com/watch/70039185?trackId=13752289&tctx=0%2C0%2C7869949faa86103a783b0eebb45f1d5a5fefc77f%3Ade3cc1a972c67c17d985dfb9c7e338289d4fbfc1%2C%2C";
+                    break;
+                case 5:
+                    link = "https://www.netflix.com/watch/70303290?trackId=13752289&tctx=0%2C0%2C73586d0bd480cfabb279fe7061919dd0014e5d85%3A55a7381820000cab969fbdb11dabb23cbe184c83%2C%2C";
+                    break;
+                case 6:
+                    link = "https://www.netflix.com/watch/60036227?trackId=13752290&tctx=0%2C1%2Cc08cddef884dcf56c2c5a19199d54d7422cfc2f9%3A8b0c728069c9b6b0c84f98456f20f626d856f70c%2C%2C";
+                    break;
+                case 7:
+                    link = "https://www.netflix.com/watch/80184625?trackId=13752289&tctx=0%2C0%2Cfb5ce7e5b9576b5877477069e2b64ef120e95eb4%3A5a2554f00b29b910c4a60c1702f4bf0dccdfe5f7%2C%2C";
+                    break;
+                case 8:
+                    link = "https://www.netflix.com/watch/80028529?trackId=13752290&tctx=2%2C0%2Cdf4e5d6c778896a980d78fe3be66073309452427%3Aaa9ca8618e248ce27c02c0df786b0305f9724888%2C%2C";
+                    break;
+                case 9:
+                    link = "https://www.netflix.com/watch/80108238?trackId=13752290&tctx=0%2C0%2Cdf4e5d6c778896a980d78fe3be66073309452427%3Aaa9ca8618e248ce27c02c0df786b0305f9724888%2C%2C";
+                    break;
+                case 10:
+                    link = "https://www.netflix.com/watch/60034553?trackId=13752289&tctx=0%2C0%2Cd037a6ab7dea2004b4a1bb45271517b10ca4b059%3A08fb6216d94fb515ec234aa2b34b49c77898a520%2C%2C";
+                    break;
+                case 11:
+                    link = "https://www.netflix.com/watch/70298386?trackId=13752289&tctx=3%2C2%2C7004aad8f7f49835d8f7cb8007a6a34c6dd2ef16%3A8c787a5bfa0503354d515fe140021cbe96cf6d07%2C%2C";
+                    break;
+                case 12:
+                    link = "https://www.netflix.com/watch/80004161?trackId=200257859";
+                    break;
+                case 13:
+                    link = "https://www.netflix.com/watch/70105212?trackId=13752289&tctx=0%2C0%2C91138474-cbe0-4972-a523-b1922ba53361-395346711%2C%2C";
+                    break;
+                case 14:
+                    link = "https://www.netflix.com/watch/70060010?trackId=13752289&tctx=0%2C0%2C300603bca3bac61e3a76a7a32afea53ee601dd71%3Af3dddebdd0a391c6f7e9660eb3627e0590509876%2C%2C";
+                    break;
+                case 15:
+                    link = "https://www.netflix.com/watch/80223371?trackId=13752289&tctx=0%2C0%2C5f839b0b-c6e7-4bcd-8711-1c58c85332e1-395379481%2C%2C";
+                    break;
+                case 16:
+                    link = "https://www.netflix.com/watch/60036227?trackId=13752290&tctx=0%2C1%2Cc08cddef884dcf56c2c5a19199d54d7422cfc2f9%3A8b0c728069c9b6b0c84f98456f20f626d856f70c%2C%2C";
+                    break;
+                case 18:
+                    link = "https://www.netflix.com/watch/70243461?trackId=13752290&tctx=0%2C4%2Cc08cddef884dcf56c2c5a19199d54d7422cfc2f9%3A8b0c728069c9b6b0c84f98456f20f626d856f70c%2C%2C";
+                    break;
+                case 20:
+                    link = "https://www.netflix.com/watch/60031223?trackId=13752289&tctx=0%2C0%2C014cff3c-80d4-4b2e-81c5-aea5d1df8657-398880504%2C%2C";
+                    break;
+                case 22:
+                    link = "https://www.netflix.com/watch/70158900?trackId=13752289&tctx=0%2C0%2Cdce0f1c1-e604-4be6-bc75-ad709fdd1893-394347894%2C%2C";
+                    break;
+                case 24:
+                    link = "https://www.netflix.com/watch/80108975?trackId=13752289&tctx=0%2C1%2C707ce372c1762c4dc2d1b61291e7d71fcc58a653%3A0c377c6dbc2b23ee46773e6b1860521185c7fcc6%2C%2C";
+                    break;
+                case 25:
+                    link = "https://www.netflix.com/watch/80108975?trackId=13752289&tctx=0%2C1%2C707ce372c1762c4dc2d1b61291e7d71fcc58a653%3A0c377c6dbc2b23ee46773e6b1860521185c7fcc6%2C%2C";
+                    break;
+                case 26:
+                    link = "https://www.netflix.com/watch/80146804?trackId=13752290&tctx=0%2C0%2C70362a6862df65ad335ad23ff400ad569cbe0b68%3Ad91fbcf9d05c40b822a5a0c9ba6e203ae739b71c%2C%2C";
+                    break;
+                case 27:
+                    link = "https://www.netflix.com/watch/70130443?trackId=13752289&tctx=0%2C0%2Ce964d58a-3456-4868-a0ad-6b20bcca0d38-116209297%2C%2C";
+                    break;
+                case 28:
+                    link = "https://www.netflix.com/watch/70135893?trackId=13752290&tctx=0%2C1%2Cf2aa95adeccbdf4912ea369bdded7a5079d11475%3A60f2253b4b6933c6ed808f9ae51b67d0c0e4af36%2C%2C";
+                    break;
+                case 29:
+                    link = "https://www.netflix.com/watch/80014853?trackId=13752289&tctx=0%2C0%2C234a5c0c-4475-4157-91c5-20abb1773e0e-8151216%2C%2C";
+                    break;
+                case 30:
+                    link = "Go outside";
+                    break;
+                }
+                
+            }
+            else{
+                link = "link";
+            }
+        }
+        
         return link;    
     }
     /**
