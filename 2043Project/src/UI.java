@@ -4,6 +4,12 @@
  */
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Desktop;
+
+import java.io.IOException;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class UI extends javax.swing.JFrame {
     @SuppressWarnings("compatibility:2647264885859345639")
@@ -21,7 +27,7 @@ public class UI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     
-    private String service = "Spotify", mood = "Joyous"; 
+    private String service = "Spotify", mood = "Joyous", link= ""; 
     private boolean[] answers = new boolean[5];
     private int questionNumber = 0, maxQuestions = 5;
     private boolean bgb = true;
@@ -36,6 +42,7 @@ public class UI extends javax.swing.JFrame {
         Brightness1 = new javax.swing.JButton();
         background1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        background2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         mood4 = new javax.swing.JButton();
         mood2 = new javax.swing.JButton();
@@ -43,7 +50,6 @@ public class UI extends javax.swing.JFrame {
         mood1 = new javax.swing.JButton();
         mood5 = new javax.swing.JButton();
         mood3 = new javax.swing.JButton();
-        background2 = new javax.swing.JLabel();
         Brightness2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -52,7 +58,7 @@ public class UI extends javax.swing.JFrame {
         Brightness3 = new javax.swing.JButton();
         background3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jTextArea4 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
         Brightness4 = new javax.swing.JButton();
         background4 = new javax.swing.JLabel();
 
@@ -63,7 +69,6 @@ public class UI extends javax.swing.JFrame {
         cards.setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,49 +77,81 @@ public class UI extends javax.swing.JFrame {
         jLabel1.setAutoscrolls(true);
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setFocusable(false);
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(100, 80, 200, 14);
 
         jButton1.setText("Netflix");
+        jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(100, 199, 75, 21);
 
         jButton2.setText("Spotify");
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(225, 199, 75, 21);
 
-        Brightness1.setText("Light/Dark");
+        Brightness1.setText("Light");
+        Brightness1.setBorderPainted(false);
         Brightness1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brightness1ActionPerformed(evt);
             }
         });
-        jPanel1.add(Brightness1);
-        Brightness1.setBounds(0, 280, 70, 21);
 
         background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
-        jPanel1.add(background1);
-        background1.setBounds(0, 0, 410, 300);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Brightness1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jButton1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jButton2))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jLabel1))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(Brightness1))
+            .addComponent(background1)
+        );
 
         cards.add(jPanel1, "card5");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
+        background2.setFocusable(false);
+        background2.setRequestFocusEnabled(false);
+        background2.setVerifyInputWhenFocusTarget(false);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("                                        Select a Mood                                 ");
         jLabel2.setToolTipText("");
 
         mood4.setText("Joyous");
+        mood4.setBorderPainted(false);
         mood4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mood4ActionPerformed(evt);
@@ -122,6 +159,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         mood2.setText("Emotional");
+        mood2.setBorderPainted(false);
         mood2.setMaximumSize(new java.awt.Dimension(52, 21));
         mood2.setMinimumSize(new java.awt.Dimension(52, 21));
         mood2.setPreferredSize(new java.awt.Dimension(52, 21));
@@ -132,6 +170,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         mood6.setText("Lugubrious");
+        mood6.setBorderPainted(false);
         mood6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mood6ActionPerformed(evt);
@@ -139,6 +178,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         mood1.setText("Bored");
+        mood1.setBorderPainted(false);
         mood1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mood1ActionPerformed(evt);
@@ -146,6 +186,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         mood5.setText("Shocked");
+        mood5.setBorderPainted(false);
         mood5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mood5ActionPerformed(evt);
@@ -153,15 +194,15 @@ public class UI extends javax.swing.JFrame {
         });
 
         mood3.setText("Confused");
+        mood3.setBorderPainted(false);
         mood3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mood3ActionPerformed(evt);
             }
         });
 
-        background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
-
-        Brightness2.setText("Light/Dark");
+        Brightness2.setText("Light");
+        Brightness2.setBorderPainted(false);
         Brightness2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brightness2ActionPerformed(evt);
@@ -172,57 +213,71 @@ public class UI extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mood1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mood4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mood5, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                            .addComponent(mood2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(mood3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(mood6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(52, 52, 52))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(Brightness2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(mood2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(mood4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(mood5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(mood6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(mood3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(mood1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Brightness2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, 0)
-                    .addComponent(background2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(0, 0, 0)))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mood1)
-                    .addComponent(mood2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mood3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mood4)
-                    .addComponent(mood5)
-                    .addComponent(mood6))
-                .addGap(59, 59, 59)
-                .addComponent(Brightness2))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(mood5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(mood6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(mood3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(161, 161, 161)
+                                .addComponent(mood2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(mood4))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(161, 161, 161)
+                                .addComponent(mood1)))
+                        .addGap(36, 36, 36)
+                        .addComponent(Brightness2)))
+                .addGap(23, 23, 23))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, 0)
-                    .addComponent(background2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(0, 0, 0)))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         cards.add(jPanel2, "card3");
@@ -230,6 +285,7 @@ public class UI extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
         jButton5.setText("Yes");
+        jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -237,6 +293,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         jButton6.setText("No");
+        jButton6.setBorderPainted(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -246,7 +303,8 @@ public class UI extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Question 1");
 
-        Brightness3.setText("Light/Dark");
+        Brightness3.setText("Light");
+        Brightness3.setBorderPainted(false);
         Brightness3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brightness3ActionPerformed(evt);
@@ -260,90 +318,61 @@ public class UI extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(Brightness3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(100, 100, 100)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Brightness3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(100, 100, 100))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background3)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(248, 248, 248)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(background3)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
+                .addGap(81, 81, 81)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addGap(59, 59, 59)
+                .addGap(88, 88, 88)
                 .addComponent(Brightness3))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background3)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jButton5))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jButton6))
+            .addComponent(background3)
         );
 
         cards.add(jPanel3, "card4");
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.setLayout(null);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(4);
-        jTextArea4.setTabSize(5);
-        jTextArea4.setText("Reccomendations:\nLink\nLink\nLink");
-        jTextArea4.setMinimumSize(new java.awt.Dimension(93, 60));
+        jButton3.setText("Open Link");
+        jButton3.setBorderPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton3);
+        jButton3.setBounds(100, 140, 200, 21);
 
-        Brightness4.setText("Light/Dark");
+        Brightness4.setText("Light");
+        Brightness4.setBorderPainted(false);
         Brightness4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Brightness4ActionPerformed(evt);
             }
         });
+        jPanel4.add(Brightness4);
+        Brightness4.setBounds(0, 270, 100, 21);
 
         background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(Brightness4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background4)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jTextArea4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(Brightness4))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(background4)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jPanel4.add(background4);
+        background4.setBounds(0, 0, 400, 300);
 
         cards.add(jPanel4, "card5");
 
@@ -402,7 +431,7 @@ public class UI extends javax.swing.JFrame {
         questionNumber ++;
         if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
-            jTextArea4.setText(getLink());
+            link = getLink();
         }
         else{
             String q = nextQuestion();
@@ -417,7 +446,7 @@ public class UI extends javax.swing.JFrame {
         questionNumber ++;
         if (questionNumber >= maxQuestions) {
             ((CardLayout)(cards.getLayout ())).show (cards, "card5");
-            jTextArea4.setText(getLink());
+            link = getLink();
         }
         else{
             String q = nextQuestion();
@@ -478,65 +507,76 @@ public class UI extends javax.swing.JFrame {
 
     private void Brightness1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness1ActionPerformed
 
-        if (bgb) {
-            jLabel1.setForeground(new Color(0,0,0));
-            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
-            bgb = false;
-        }
-        else{
-            jLabel1.setForeground(new Color(255,255,255));
-            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
-            bgb = true;
-        }
+        blackWhite();
         
     }//GEN-LAST:event_Brightness1ActionPerformed
 
     private void Brightness2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness2ActionPerformed
         
-        if (bgb) {
-            jLabel2.setForeground(new Color(0,0,0));
-            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
-            bgb = false;
-        }
-        else{
-            jLabel2.setForeground(new Color(255,255,255));
-            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
-            bgb = true;
-        }
+        blackWhite();
         
     }//GEN-LAST:event_Brightness2ActionPerformed
 
     private void Brightness3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness3ActionPerformed
         
-        if (bgb) {
-            jLabel3.setForeground(new Color(0,0,0));
-            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
-            bgb = false;
-        }
-        else{
-            jLabel3.setForeground(new Color(255,255,255));
-            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
-            bgb = true;
-        }
+        blackWhite();
         
     }//GEN-LAST:event_Brightness3ActionPerformed
 
     private void Brightness4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Brightness4ActionPerformed
         
-        if (bgb) {
-            jTextArea4.setForeground(new Color(0, 0, 0));
-            jTextArea4.setBackground(new Color(255, 255, 255));
-            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
-            bgb = false;
-        } else {
-            jTextArea4.setForeground(new Color(255, 255, 255));
-            jTextArea4.setBackground(new Color(0, 0, 0));
-            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
-            bgb = true;
-        }
+        blackWhite();
         
     }//GEN-LAST:event_Brightness4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if (Desktop.isDesktopSupported()) {
+            try {
+                URI uri = new URI(link);
+                Desktop.getDesktop().browse(uri);
+            } catch (IOException e) { /* TODO: error handling */ }
+            catch(URISyntaxException e) {}
+        } else { /* TODO: error handling */ }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void blackWhite(){
+        if (bgb) {
+            jLabel1.setForeground(new Color(0,0,0));
+            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            
+            jLabel2.setForeground(new Color(0,0,0));
+            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            
+            jLabel3.setForeground(new Color(0,0,0));
+            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            
+            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgw.jpg")));
+            
+            Brightness1.setText("Dark");
+            Brightness2.setText("Dark");
+            Brightness3.setText("Dark");
+            Brightness4.setText("Dark");
+            bgb = false;
+        } else {
+            jLabel1.setForeground(new Color(255,255,255));
+            background1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            
+            jLabel2.setForeground(new Color(255,255,255));
+            background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            
+            jLabel3.setForeground(new Color(255,255,255));
+            background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            
+            background4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/2043Project/src/bgb.jpg")));
+            
+            Brightness1.setText("Light");
+            Brightness2.setText("Light");
+            Brightness3.setText("Light");
+            Brightness4.setText("Light");
+            bgb = true;
+        }
+    }
     public String nextQuestion(){
         String res = "";
         int nextQ = 0;
@@ -727,7 +767,7 @@ public class UI extends javax.swing.JFrame {
                                 nextQ = 18;
                                 maxQuestions = 4;
                                 ((CardLayout)(cards.getLayout ())).show (cards, "card5");
-                                jTextArea4.setText(getLink());
+                                link = getLink();
                             }
                         }
                     }
@@ -1103,6 +1143,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JPanel cards;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
@@ -1112,7 +1153,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JButton mood1;
     private javax.swing.JButton mood2;
     private javax.swing.JButton mood3;
